@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Scheda">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="format-detection" content="telephone=no">
+<title>Scheda Full Body</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0a0a0a;--card:#141414;--card2:#1c1c1c;--border:#2a2a2a;
+  --text:#f2f2f2;--muted:#8d8d8d;--accent:#e8ff3b;--orange:#ff6b35;--teal:#3bffd4;
+}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',-apple-system,system-ui,sans-serif;font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%;touch-action:manipulation;padding-bottom:calc(110px + env(safe-area-inset-bottom));min-height:100vh}
+.wrap{max-width:560px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left))}
+button{font-family:inherit;cursor:pointer}
+
+/* Header */
+.top{max-width:560px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 20px) 16px 14px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1{font-family:'Bebas Neue',Impact,sans-serif;font-size:52px;line-height:.9;letter-spacing:.02em;margin-top:6px;font-weight:400}
+h1 span{color:var(--accent)}
+
+/* Tabs */
+.tabs{position:sticky;top:0;z-index:30;background:rgba(10,10,10,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.tabs-in{max-width:560px;margin:0 auto;padding:10px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tab{height:46px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;gap:6px}
+.tab small{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.04em;color:var(--muted);font-weight:600;text-transform:uppercase}
+.tab.on{background:var(--accent);color:#0a0a0a;border-color:var(--accent)}
+.tab.on small{color:#0a0a0a}
+
+/* Regole */
+.rules{margin-top:16px;background:linear-gradient(135deg,rgba(255,107,53,.14),rgba(232,255,59,.06));border:1px solid rgba(255,107,53,.4);border-radius:18px;padding:0 16px}
+.rules summary{list-style:none;padding:15px 0;font-weight:700;font-size:15px;display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.rules summary::-webkit-details-marker{display:none}
+.rules summary .t{flex:1}
+.rules summary .t em{display:block;font-style:normal;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:2px}
+.plus{flex:none;width:24px;height:24px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;font-size:15px;line-height:1;opacity:.7;transition:transform .2s}
+details[open] > summary .plus{transform:rotate(45deg)}
+.rules .body{padding:0 0 16px;display:grid;gap:12px;font-size:14px}
+.rules .body p b{color:var(--accent);font-weight:700;letter-spacing:.02em}
+.rules .yellow-demo{display:inline-block;width:14px;height:14px;border-radius:4px;background:rgba(232,255,59,.18);border:1px solid var(--accent);vertical-align:-2px;margin-right:4px}
+.rules .video-note{background:rgba(0,0,0,.35);border-radius:12px;padding:10px 12px;font-size:13.5px}
+
+/* Sezioni */
+.sec{display:flex;align-items:center;gap:10px;margin:30px 0 12px}
+.sec-n{font-family:'Bebas Neue',Impact,sans-serif;font-size:15px;color:#0a0a0a;background:var(--accent);border-radius:6px;padding:3px 7px 1px;line-height:1.1}
+.sec-n.alt{background:var(--teal)}
+.sec-n.mute{background:#3a3a3a;color:var(--text)}
+.sec-t{font-family:'Bebas Neue',Impact,sans-serif;font-size:28px;letter-spacing:.04em;line-height:1}
+
+/* Riscaldamento / defaticamento */
+.warm{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;margin-bottom:8px}
+.warm-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.warm-n{font-weight:700;font-size:15px}
+.warm-p{font-size:13px;color:var(--accent);font-weight:600;text-align:right;flex:none;max-width:52%}
+.warm-x{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* Card esercizio */
+.ex{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:16px;margin-bottom:12px}
+.ex-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.mus{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.ex h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:30px;line-height:1;letter-spacing:.02em;margin-top:3px}
+.vid{flex:none;display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#0a0a0a;font-weight:700;font-size:13.5px;padding:0 13px;height:40px;border-radius:12px;text-decoration:none}
+.vid svg{width:14px;height:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;height:32px;padding:0 11px;border-radius:999px;border:1px solid var(--border);background:var(--card2);color:var(--text)}
+.chip.m50{color:var(--orange);border-color:rgba(255,107,53,.5)}
+.chip.ced{color:var(--teal);border-color:rgba(59,255,212,.45)}
+.chip.fit{color:var(--teal);border-color:rgba(59,255,212,.45)}
+.chip.rest{color:var(--accent);border-color:rgba(232,255,59,.45)}
+.chip.rest svg{width:14px;height:14px}
+.chip.rest:active{background:rgba(232,255,59,.15)}
+
+.hint{margin-top:12px;font-size:13.5px;line-height:1.4;padding:10px 12px;border-radius:12px;background:rgba(232,255,59,.07);color:var(--accent);border:1px solid rgba(232,255,59,.22)}
+.warn{margin-top:8px;font-size:13px;padding:9px 12px;border-radius:12px;background:rgba(255,107,53,.1);color:var(--orange);border:1px solid rgba(255,107,53,.35)}
+
+/* Log pesi */
+.log{margin-top:14px;display:grid;gap:8px;align-items:center}
+.log.ced{grid-template-columns:30px 1fr 1fr}
+.log.m50{grid-template-columns:1fr 1fr}
+.log.fit{grid-template-columns:repeat(3,1fr)}
+.lh{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;text-align:center}
+.lh.k{color:var(--accent)}
+.sl{font-family:'Bebas Neue',Impact,sans-serif;font-size:19px;color:var(--muted);text-align:center}
+.in{width:100%;height:48px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:19px;font-weight:700;text-align:center;outline:none;-webkit-appearance:none;appearance:none;transition:border-color .15s}
+.in::placeholder{color:#4e4e4e;font-weight:600}
+.in:focus{border-color:var(--text)}
+.in.key{border-color:rgba(232,255,59,.6);background:rgba(232,255,59,.07)}
+.in.key:focus{border-color:var(--accent)}
+
+/* Contatore 50 colpi */
+.cnt{margin-top:14px;background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:10px}
+.cnt-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.cnt-h span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.cnt-h > div{display:flex;align-items:center;gap:4px;flex:none;white-space:nowrap}
+.cnt-tot{font-family:'Bebas Neue',Impact,sans-serif;font-size:22px;color:var(--orange);letter-spacing:.03em;line-height:1}
+.cnt-reset{background:none;border:0;color:var(--muted);font-size:12px;font-weight:600;padding:4px 0 4px 10px}
+.blks{display:flex;gap:5px}
+.blk{flex:1;min-width:0;height:42px;border-radius:10px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700}
+.blk.first{flex:1.4}
+.blk.done{background:var(--orange);border-color:var(--orange);color:#0a0a0a}
+.cnt-x{font-size:11.5px;color:var(--muted);margin-top:7px;text-align:center}
+
+/* Storico */
+.hist{margin-top:12px;font-size:12.5px;color:var(--muted);display:grid;gap:3px}
+.hist b{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+.hist div span{display:inline-block;min-width:46px;color:var(--text);font-weight:600}
+
+/* Dettagli */
+.dt{margin-top:12px;border-top:1px solid var(--border)}
+.dt summary{list-style:none;padding:13px 0 1px;font-weight:700;font-size:14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.dt summary::-webkit-details-marker{display:none}
+.dt summary .lbl{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.dot.m50{background:var(--orange)}.dot.ced{background:var(--teal)}
+.dt .plus{width:22px;height:22px;font-size:14px;color:var(--muted)}
+.dt-b{padding:10px 0 4px;font-size:14px;color:#cfcfcf;display:grid;gap:10px}
+.dt-b h4{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:3px}
+
+/* Fine */
+.finish{width:100%;height:58px;border-radius:16px;background:var(--accent);color:#0a0a0a;font-size:16.5px;font-weight:700;border:0;margin-top:26px}
+.finish:active{opacity:.85}
+.finish-x{font-size:12.5px;color:var(--muted);text-align:center;margin-top:8px}
+.foot{margin-top:34px;padding-top:16px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:center}
+.foot button{background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:12.5px;font-weight:600;padding:9px 13px;border-radius:10px}
+
+.soon{margin-top:24px;background:var(--card);border:1px dashed var(--border);border-radius:20px;padding:34px 20px;text-align:center}
+.soon h2{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;font-size:34px;letter-spacing:.03em}
+.soon p{color:var(--muted);margin-top:6px;font-size:14px}
+
+/* Timer recupero */
+.timer{position:fixed;z-index:50;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));max-width:536px;margin:0 auto;background:#1b1b1b;border:1px solid var(--accent);border-radius:20px;padding:12px 14px 12px 18px;display:flex;align-items:center;gap:12px;transform:translateY(160%);transition:transform .25s ease;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.timer.show{transform:none}
+.timer .tt{flex:1;min-width:0}
+.timer .tl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timer .tv{font-family:'Bebas Neue',Impact,sans-serif;font-size:40px;line-height:1;color:var(--accent);letter-spacing:.03em}
+.timer button{height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-weight:700;font-size:14px}
+.timer.done{background:var(--accent);border-color:var(--accent)}
+.timer.done .tl,.timer.done .tv{color:#0a0a0a}
+.timer.done button{background:#0a0a0a;color:var(--accent);border-color:#0a0a0a}
+
+.toast{position:fixed;z-index:60;left:50%;top:calc(env(safe-area-inset-top) + 70px);transform:translate(-50%,-20px);opacity:0;background:var(--text);color:#0a0a0a;font-weight:700;font-size:14px;padding:11px 16px;border-radius:12px;transition:all .25s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="eyebrow">Scheda Full Body · Marco</div>
+  <h1 id="title">Giorno <span>A</span></h1>
+</header>
+
+<nav class="tabs"><div class="tabs-in" id="tabs"></div></nav>
+
+<main class="wrap" id="app"></main>
+
+<div class="timer" id="timer" role="status" aria-live="polite">
+  <div class="tt"><div class="tl" id="timerLbl">Recupero</div><div class="tv" id="timerVal">0:00</div></div>
+  <button id="timerAdd">+30″</button>
+  <button id="timerStop">Stop</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- Icone ---------- */
+const PLAY='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg>';
+const CLOCK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>';
+
+/* ---------- Testi metodo ---------- */
+const METHOD={
+  m50:{title:'Metodo 50 colpi',
+    cosa:"Fai 12 ripetizioni con il carico più alto che riesci a gestire, poi 5 secondi di pausa e 5 ripetizioni, 5 secondi e 5 ripetizioni, fino ad arrivare a 42. Chiudi con 2 mini serie da 4, sempre con 5 secondi di pausa. Se durante la serie il peso diventa troppo pesante abbassalo un po' alla volta.",
+    prog:"Ogni allenamento provi a partire con un carico più alto. Quando non riesci più a progredire, sulle prime fai 8 ripetizioni invece di 12 ma continui ad alzare i carichi seduta dopo seduta."},
+  ced:{title:'Metodo 6/12 cedimento',
+    cosa:"Usi un carico con cui arrivi a cedimento tecnico tra 6 e 12 ripetizioni. Ti fermi quando non riesci più a fare la ripetizione pulita, non quando il peso si blocca.",
+    prog:"Quando alla prima serie arrivi a 12 ripetizioni, la settimana dopo alzi il carico e riparti da 6/8. Ogni settimana migliori una cosa: o il carico o le ripetizioni. Se centri davvero il cedimento è normale che la seconda e la terza serie vengano più basse della prima (12, 10, 9): non è un passo indietro, vuol dire che hai lavorato bene. Se perdi più di 2 ripetizioni tra una serie e l'altra recupera un po' di più. Nei carichi piccoli usa i dischetti, 2 kg su 10 sono tanti."}
+};
+const BLOCKS=[12,5,5,5,5,5,5,4,4];
+
+/* ---------- Programma ---------- */
+const DAYS={
+  A:{sections:[
+    {n:'01',name:'Riscaldamento',kind:'warm',items:[
+      {name:'Cyclette o vogatore',proto:'5 min'},
+      {name:'Mobilità con elastico o bastone',proto:'Spalle, anche, colonna'},
+      {name:'Serie di avvicinamento',proto:'Prima di ogni esercizio pesante',note:'Esempio: lavori con 50 kg, fai una serie con 20, una con 30, una con 40 e poi inizi.'}
+    ]},
+    {n:'02',name:'Addome',alt:true,items:[
+      {id:'fitball',muscle:'Addome',name:'Addome su fitball',proto:'3 × 20',rest:60,type:'fit',
+       video:'https://drive.google.com/file/d/17WwoDv_EjCv8ieFgyeAAilXvNVTBBBAU/view?usp=drive_link',
+       tech:"Muovi la colonna, non l'anca: arrotola il busto portando lo sterno verso il bacino e torna giù lento allungando bene l'addome. Quando 20 diventano facili tieni un disco sul petto."}
+    ]},
+    {n:'03',name:'Parte alta',items:[
+      {id:'chest_press',muscle:'Petto',name:'Chest press',proto:'50 colpi',type:'m50',
+       video:'https://drive.google.com/file/d/1S6fri3ZH0fkjhkTEXRZD59UClqXDBTai/view?usp=drive_link',
+       tech:"Sedile regolato in modo che i gomiti stiano a circa 45° dal busto, mai larghi. Piedi ben piantati. Scapole basse: in basso si avvicinano, salendo si allontanano un po'. Discesa in 2/3 secondi, breve pausa in allungamento, spinta esplosiva. Non serve stendere del tutto le braccia."},
+      {id:'ciu_ciuf',muscle:'Schiena',name:'Ciu ciuf',proto:'3 × 6/12 cedimento · per braccio',rest:120,type:'ced',side:'x braccio',
+       video:'https://drive.google.com/file/d/1-wB8qK-s05YylDBc90y37feXdYuqxvti/view?usp=drive_link',
+       tech:"Schiena neutra e avambraccio sempre in linea con il cavo, se lo disallinei lavora il tricipite. Scapola e braccio si muovono insieme: in alto lascia salire la scapola per allungare il dorsale, poi porta il gomito verso il bacino. Non ruotare il polso. Straps se la presa cede prima della schiena."},
+      {id:'alzate_cavo',muscle:'Spalle',name:'Alzate laterali cavo',proto:'50 colpi · per braccio',type:'m50',
+       video:'https://drive.google.com/file/d/1LviqPAJPFFmT0J3Zp2-38I13e9B3UFAu/view?usp=drive_link',
+       tech:"Cavo all'altezza del bacino, cavigliera sul polso. Braccio quasi teso sul piano della scapola, pensa ad allontanare la mano da te, non ad alzarla. Spalle lontane dalle orecchie, sentire un po' i trapezi è normale. Non serve salire oltre l'orizzontale."},
+      {id:'panca_scott',muscle:'Bicipiti',name:'Panca Scott su appoggio',proto:'3 × 6/12 cedimento',rest:120,type:'ced',
+       video:'https://drive.google.com/file/d/1MvnjjKymlt9qDmn8ic8KwrB7jFmDXXoG/view?usp=drive_link',
+       tech:"Ascella ben appoggiata e omero premuto contro il pad. Scendi fino in fondo in 2/3 secondi: la parte bassa vicino al gomito è quella che fa crescere di più. Sali deciso senza staccare il gomito e senza slanci."},
+      {id:'pushdown_v',muscle:'Tricipiti',name:'Push down barra a V cavo',proto:'50 colpi · per braccio',type:'m50',
+       video:'https://drive.google.com/file/d/1T5ZKEsQ3pVZaS_fNAXxVnqnYDRROI2ii/view?usp=drive_link',
+       tech:"Gomiti un po' staccati dal busto e fermi, busto appena inclinato in avanti. Stendi bene il gomito e risali controllando fino a circa 90°. Se i polsi danno fastidio passa alla corda."}
+    ]},
+    {n:'04',name:'Parte bassa',alt:true,items:[
+      {id:'hip_thrust',muscle:'Glutei',name:'Hip thrust',proto:'3 × 6/12 cedimento',rest:120,type:'ced',
+       video:'https://drive.google.com/file/d/1iu_W015fAq5SDT-NWbthXunyurYhoT2f/view?usp=drive_link',
+       tech:"Schiena alta appoggiata alla panca, piedi larghi come il bacino, in alto le tibie sono verticali. Spingi con i talloni e porta il bacino in estensione senza inarcare la zona lombare, 1 secondo di stop in alto. Niente elastico alle ginocchia, distrae dal movimento."},
+      {id:'leg_ext',muscle:'Quadricipiti',name:'Leg extension',proto:'50 colpi · per gamba',type:'m50',
+       video:'https://drive.google.com/file/d/1y7NZPc7i7-I8re2uLaoMgJg6O2qux7zu/view?usp=drive_link',
+       tech:"Schienale un po' inclinato indietro così lavora anche il retto femorale. Bacino incollato al sedile. Scendi piegando bene il ginocchio e sali esplosivo fino quasi a stendere la gamba."},
+      {id:'polpacci_step',muscle:'Polpacci',name:'Polpacci su step',proto:'3 × 6/12 cedimento',rest:60,type:'ced',
+       video:'https://drive.google.com/file/d/1omXUydDIRTCnPPab7tslPu2UlDhI4Cxg/view?usp=drive_link',
+       tech:"Gamba tesa, avampiede sul bordo dello step. Scendi fino in fondo e resta 2/3 secondi in allungamento, è la parte che fa crescere il polpaccio. Sali sulle punte senza rimbalzare."}
+    ]},
+    {n:'05',name:'Defaticamento',kind:'warm',mute:true,items:[
+      {name:'Stretching dei muscoli lavorati'}
+    ]}
+  ]},
+  B:null,
+  C:null
+};
+
+/* ---------- Salvataggio ---------- */
+const STORE='scheda_fullbody_v1';
+let S=null;
+try{S=JSON.parse(localStorage.getItem(STORE))}catch(e){}
+function ensure(){ if(!S||typeof S!=='object')S={}; ['A','B','C'].forEach(d=>{ if(!S[d]||typeof S[d]!=='object')S[d]={}; S[d].cur=S[d].cur||{}; S[d].hist=S[d].hist||[]; }); }
+ensure();
+function save(){try{localStorage.setItem(STORE,JSON.stringify(S))}catch(e){}}
+let day='A';
+try{const t=localStorage.getItem(STORE+'_tab'); if(t&&DAYS.hasOwnProperty(t))day=t}catch(e){}
+
+/* ---------- Helper ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const num=v=>{const x=parseFloat(String(v==null?'':v).replace(',','.'));return isNaN(x)?null:x};
+const hasVals=o=>!!o&&Object.values(o).some(v=>v!==''&&v!=null);
+const lastFor=(d,id)=>{const h=S[d].hist.find(e=>hasVals(e.v[id]));return h?h.v[id]:null};
+const histFor=(d,id,n)=>S[d].hist.filter(e=>hasVals(e.v[id])).slice(0,n);
+const fmtDate=iso=>{const p=iso.split('-');return p[2]+'/'+p[1]};
+function findEx(id){for(const d in DAYS){if(!DAYS[d])continue;for(const s of DAYS[d].sections)for(const it of s.items)if(it.id===id)return it}return null}
+
+function fmtEntry(type,v){
+  if(type==='ced') return [1,2,3].map(i=>(v['s'+i+'kg']||v['s'+i+'r'])?`${v['s'+i+'kg']||'–'}×${v['s'+i+'r']||'–'}`:null).filter(Boolean).join('  ·  ');
+  if(type==='m50') return `${v.kg0||'–'} kg`+(v.kg1?` → ${v.kg1} kg`:'');
+  return [1,2,3].map(i=>v['s'+i+'kg']).filter(Boolean).join('  ·  ')+' kg';
+}
+function hintFor(ex,last){
+  if(ex.type==='ced'){
+    if(!last) return 'Prima seduta: trova il carico che ti porta a cedimento tra 6 e 12 ripetizioni.';
+    const r=num(last.s1r), kg=last.s1kg||'?';
+    if(r!==null&&r>=12) return `Ultima volta ${kg} kg × ${r} alla 1ª serie → oggi alza il carico e riparti da 6/8.`;
+    if(r!==null) return `Ultima volta ${kg} kg × ${r} alla 1ª serie → oggi stesso carico, prova a fare ${r+1} o più ripetizioni.`;
+    return null;
+  }
+  if(ex.type==='m50'){
+    if(!last||!last.kg0) return 'Prima seduta: parti con il carico più alto con cui riesci a fare 12 ripetizioni.';
+    return `Ultima partenza ${last.kg0} kg → oggi prova a partire più alto.`;
+  }
+  return null;
+}
+
+/* ---------- Render ---------- */
+function inp(id,f,ph,key,mode){
+  const v=(S[day].cur[id]||{})[f]||'';
+  return `<input class="in${key?' key':''}" data-ex="${id}" data-f="${f}" type="text" inputmode="${mode}" enterkeyhint="next" autocomplete="off" placeholder="${esc(ph||'–')}" value="${esc(v)}">`;
+}
+function logHtml(ex,last){
+  const L=last||{};
+  if(ex.type==='ced'){
+    let h=`<div class="log ced"><span></span><span class="lh">Kg</span><span class="lh">Rip${ex.side?' '+ex.side:''}</span>`;
+    for(let i=1;i<=3;i++) h+=`<span class="sl">S${i}</span>${inp(ex.id,'s'+i+'kg',L['s'+i+'kg'],i===1,'decimal')}${inp(ex.id,'s'+i+'r',L['s'+i+'r'],i===1,'numeric')}`;
+    return h+`</div><div class="warn" hidden></div>`;
+  }
+  if(ex.type==='m50'){
+    return `<div class="log m50"><span class="lh k">Kg partenza</span><span class="lh">Kg finale (se cali)</span>${inp(ex.id,'kg0',L.kg0,true,'decimal')}${inp(ex.id,'kg1',L.kg1,false,'decimal')}</div>`;
+  }
+  return `<div class="log fit"><span class="lh k">S1 · kg disco</span><span class="lh">S2 · kg</span><span class="lh">S3 · kg</span>${inp(ex.id,'s1kg',L.s1kg,true,'decimal')}${inp(ex.id,'s2kg',L.s2kg,false,'decimal')}${inp(ex.id,'s3kg',L.s3kg,false,'decimal')}</div>`;
+}
+function counterHtml(){
+  return `<div class="cnt"><div class="cnt-h"><span>Contatore blocchi</span><div><b class="cnt-tot">0 / 50</b><button class="cnt-reset">Azzera</button></div></div>
+  <div class="blks">${BLOCKS.map((b,i)=>`<button class="blk${i===0?' first':''}" data-v="${b}">${b}</button>`).join('')}</div>
+  <div class="cnt-x">5″ di pausa tra un blocco e l'altro</div></div>`;
+}
+function methodHtml(type){
+  const m=METHOD[type];
+  return `<details class="dt"><summary><span class="lbl"><i class="dot ${type}"></i>${m.title}</span><span class="plus">+</span></summary>
+  <div class="dt-b"><div><h4>Cosa significa</h4><p>${m.cosa}</p></div><div><h4>Come si progredisce</h4><p>${m.prog}</p></div></div></details>`;
+}
+function exCard(ex){
+  const last=lastFor(day,ex.id), hint=hintFor(ex,last), hist=histFor(day,ex.id,3);
+  return `<article class="ex" data-id="${ex.id}">
+    <div class="ex-top"><div><div class="mus">${ex.muscle}</div><h3>${ex.name}</h3></div>
+      <a class="vid" href="${ex.video}" target="_blank" rel="noopener">${PLAY}Video</a></div>
+    <div class="chips"><span class="chip ${ex.type}">${ex.proto}</span>${ex.rest?`<button class="chip rest" data-rest="${ex.rest}" data-name="${esc(ex.name)}">${CLOCK}Recupero ${ex.rest/60} min</button>`:''}</div>
+    ${hint?`<div class="hint">${hint}</div>`:''}
+    ${logHtml(ex,last)}
+    ${ex.type==='m50'?counterHtml():''}
+    ${hist.length?`<div class="hist"><b>Ultime sedute</b>${hist.map(h=>`<div><span>${fmtDate(h.d)}</span>${fmtEntry(ex.type,h.v[ex.id])}</div>`).join('')}</div>`:''}
+    <details class="dt"><summary><span class="lbl"><i class="dot"></i>Tecnica</span><span class="plus">+</span></summary><div class="dt-b"><p>${ex.tech}</p></div></details>
+    ${ex.type!=='fit'?methodHtml(ex.type):''}
+  </article>`;
+}
+function rulesHtml(){
+  return `<details class="rules"><summary><span class="t">🔥 La cosa più importante: progredire mantenendo la tecnica<em>Un kg in più con l'esecuzione che peggiora non è un progresso.</em></span><span class="plus">+</span></summary>
+  <div class="body">
+    <p><b>6/12 CEDIMENTO</b> · Usi un carico con cui arrivi a cedimento tra 6 e 12 ripetizioni. Quando alla prima serie arrivi a 12, la settimana dopo alzi il carico e riparti più in basso. Ogni settimana migliori una cosa: o il carico o le ripetizioni.</p>
+    <p><b>SE CENTRI DAVVERO IL CEDIMENTO</b> · È normale che nella seconda e nella terza serie fai meno ripetizioni della prima (per esempio 10, 9, 8). Vuol dire che hai lavorato bene. Se ne perdi più di 2 tra una serie e l'altra recupera un po' di più.</p>
+    <p><b>50 COLPI</b> · 12 ripetizioni con il carico più alto che gestisci, poi 5 secondi di pausa e 5 ripetizioni, avanti così fino a 42, chiudi con 2 mini serie da 4 sempre con 5 secondi di pausa. Ogni seduta provi a partire con più carico.</p>
+    <p><span class="yellow-demo"></span><b>CAMPI GIALLI</b> · Kg e ripetizioni della prima serie (nei 50 colpi il carico di partenza): sono quelli che contano per la progressione.</p>
+    <p class="video-note">🎥 Fatti dei video e mandali al trainer, così guarda le esecuzioni e ti corregge.</p>
+  </div></details>`;
+}
+function render(){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.day===day));
+  $('#title').innerHTML=`Giorno <span>${day}</span>`;
+  const D=DAYS[day];
+  let h=rulesHtml();
+  if(!D){
+    h+=`<div class="soon"><h2>Giorno ${day} in arrivo</h2><p>Manda la scheda del Giorno ${day} e la aggiungo qui, con lo stesso formato.</p></div>`;
+  }else{
+    D.sections.forEach(sec=>{
+      h+=`<div class="sec"><span class="sec-n${sec.alt?' alt':''}${sec.mute?' mute':''}">${sec.n}</span><span class="sec-t">${sec.name}</span></div>`;
+      sec.items.forEach(it=>{
+        if(sec.kind==='warm') h+=`<div class="warm"><div class="warm-h"><span class="warm-n">${it.name}</span>${it.proto?`<span class="warm-p">${it.proto}</span>`:''}</div>${it.note?`<div class="warm-x">${it.note}</div>`:''}</div>`;
+        else h+=exCard(it);
+      });
+    });
+    const n=S[day].hist.length;
+    h+=`<button class="finish" id="finish">✓ Concludi allenamento</button>
+        <div class="finish-x">Salva i pesi di oggi nello storico e svuota i campi.${n?` Sedute salvate: ${n}.`:''}</div>`;
+  }
+  h+=`<div class="foot"><button id="exp">Esporta backup</button><button id="imp">Importa backup</button></div>`;
+  $('#app').innerHTML=h;
+  document.querySelectorAll('.ex').forEach(c=>checkWarn(c.dataset.id));
+}
+function renderTabs(){
+  $('#tabs').innerHTML=['A','B','C'].map(d=>`<button class="tab" data-day="${d}">${d}${DAYS[d]?'':'<small>presto</small>'}</button>`).join('');
+}
+
+/* ---------- Avviso calo ripetizioni ---------- */
+function checkWarn(id){
+  const ex=findEx(id); if(!ex||ex.type!=='ced')return;
+  const card=document.querySelector(`.ex[data-id="${id}"]`); if(!card)return;
+  const c=S[day].cur[id]||{}, r=[1,2,3].map(i=>num(c['s'+i+'r']));
+  const drop=(r[0]!==null&&r[1]!==null&&r[0]-r[1]>2)||(r[1]!==null&&r[2]!==null&&r[1]-r[2]>2);
+  const w=card.querySelector('.warn');
+  w.hidden=!drop;
+  if(drop) w.textContent='Hai perso più di 2 ripetizioni tra una serie e l\'altra: recupera un po\' di più.';
+}
+
+/* ---------- Timer ---------- */
+let tEnd=0,tInt=null,actx=null;
+function beep(){
+  try{ if(!actx)return; const now=actx.currentTime;
+    [0,.28,.56].forEach(o=>{const os=actx.createOscillator(),g=actx.createGain();os.frequency.value=880;os.connect(g);g.connect(actx.destination);
+      g.gain.setValueAtTime(.0001,now+o);g.gain.exponentialRampToValueAtTime(.35,now+o+.02);g.gain.exponentialRampToValueAtTime(.0001,now+o+.2);os.start(now+o);os.stop(now+o+.22);});
+  }catch(e){}
+  try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}
+}
+function tick(){
+  const left=Math.max(0,Math.ceil((tEnd-Date.now())/1000));
+  $('#timerVal').textContent=Math.floor(left/60)+':'+String(left%60).padStart(2,'0');
+  if(left===0){clearInterval(tInt);tInt=null;$('#timer').classList.add('done');$('#timerLbl').textContent='Recupero finito · vai!';beep();}
+}
+function startTimer(sec,name){
+  try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();actx.resume&&actx.resume();}catch(e){}
+  tEnd=Date.now()+sec*1000;
+  $('#timerLbl').textContent='Recupero · '+name;
+  const t=$('#timer');t.classList.remove('done');t.classList.add('show');
+  clearInterval(tInt);tick();tInt=setInterval(tick,250);
+}
+function stopTimer(){clearInterval(tInt);tInt=null;$('#timer').classList.remove('show','done');}
+$('#timerStop').onclick=stopTimer;
+$('#timerAdd').onclick=()=>{ if(!tInt){tEnd=Date.now();$('#timer').classList.remove('done');tInt=setInterval(tick,250);} tEnd+=30000; $('#timerLbl').textContent=$('#timerLbl').textContent.replace('Recupero finito · vai!','Recupero'); tick(); };
+
+/* ---------- Toast ---------- */
+let toT;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toT);toT=setTimeout(()=>t.classList.remove('show'),2200);}
+
+/* ---------- Eventi ---------- */
+$('#tabs').addEventListener('click',e=>{
+  const b=e.target.closest('.tab'); if(!b)return;
+  day=b.dataset.day; try{localStorage.setItem(STORE+'_tab',day)}catch(err){}
+  render(); window.scrollTo({top:0});
+});
+const app=$('#app');
+app.addEventListener('input',e=>{
+  const t=e.target; if(!t.classList.contains('in'))return;
+  const id=t.dataset.ex,f=t.dataset.f;
+  (S[day].cur[id]=S[day].cur[id]||{})[f]=t.value.trim();
+  save(); checkWarn(id);
+});
+app.addEventListener('keydown',e=>{
+  if(e.key!=='Enter'||!e.target.classList.contains('in'))return;
+  e.preventDefault();
+  const all=[...app.querySelectorAll('.in')], i=all.indexOf(e.target);
+  if(all[i+1]&&all[i+1].closest('.ex')===e.target.closest('.ex'))all[i+1].focus(); else e.target.blur();
+});
+app.addEventListener('click',e=>{
+  const r=e.target.closest('.rest');
+  if(r){startTimer(+r.dataset.rest,r.dataset.name);return}
+  const b=e.target.closest('.blk');
+  if(b){b.classList.toggle('done');updCnt(b.closest('.cnt'));return}
+  const z=e.target.closest('.cnt-reset');
+  if(z){const c=z.closest('.cnt');c.querySelectorAll('.blk').forEach(x=>x.classList.remove('done'));updCnt(c);return}
+  if(e.target.closest('#finish')){finish();return}
+  if(e.target.closest('#exp')){exportB();return}
+  if(e.target.closest('#imp')){importB();return}
+});
+function updCnt(c){
+  const tot=[...c.querySelectorAll('.blk.done')].reduce((a,x)=>a+(+x.dataset.v),0);
+  c.querySelector('.cnt-tot').textContent=tot+' / 50';
+}
+function finish(){
+  const cur=S[day].cur;
+  if(!Object.values(cur).some(hasVals)){toast('Nessun peso inserito oggi');return}
+  if(!confirm("Salvare l'allenamento di oggi nello storico?\nI campi verranno svuotati per la prossima seduta."))return;
+  const d=new Date(), iso=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  S[day].hist.unshift({d:iso,v:JSON.parse(JSON.stringify(cur))});
+  S[day].hist=S[day].hist.slice(0,150);
+  S[day].cur={};
+  save(); render(); window.scrollTo({top:0,behavior:'smooth'}); toast('Allenamento salvato');
+}
+function exportB(){
+  const txt=JSON.stringify(S);
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(()=>toast('Backup copiato: incollalo in una Nota')).catch(()=>prompt('Copia questo testo e salvalo in una Nota:',txt));
+  }else prompt('Copia questo testo e salvalo in una Nota:',txt);
+}
+function importB(){
+  const t=prompt('Incolla qui il testo del backup:'); if(!t)return;
+  try{const o=JSON.parse(t); if(!o||!o.A)throw 0; S=o; ensure(); save(); render(); toast('Backup ripristinato');}
+  catch(err){toast('Backup non valido');}
+}
+
+renderTabs(); render();
+</script>
+</body>
+</html>
