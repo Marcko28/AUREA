@@ -306,7 +306,48 @@ const DAYS={
       {name:'Stretching dei muscoli lavorati'}
     ]}
   ]},
-  C:null
+  C:{sections:[
+    {n:'01',name:'Riscaldamento',kind:'warm',items:[
+      {name:'Cyclette o vogatore',proto:'5 min'},
+      {name:'Mobilità con elastico o bastone',proto:'Spalle, anche, colonna'},
+      {name:'Serie di avvicinamento',proto:'Prima di ogni esercizio pesante',note:'Esempio: lavori con 50 kg, fai una serie con 20, una con 30, una con 40 e poi inizi.'}
+    ]},
+    {n:'02',name:'Addome',alt:true,items:[
+      {id:'c_obliqui_panca',muscle:'Addome · obliqui',name:'Obliqui su panca',proto:'50 colpi · per lato',type:'m50',
+       video:'https://drive.google.com/file/d/1vZCH36QSorNGgbfZgJnh0ln1pLy-r6lH/view?usp=drive_link',
+       tech:"Di lato sulla panca da hyperextension, bacino appoggiato. Scendi di lato allungando bene e risali piegando il busto verso il fianco. Muovi la colonna, non l'anca."}
+    ]},
+    {n:'03',name:'Parte alta',items:[
+      {id:'c_ciu_ciuf',muscle:'Schiena',name:'Ciu ciuf',proto:'3 × 6/12 cedimento · per braccio',rest:120,type:'ced',side:'x braccio',
+       video:'https://drive.google.com/file/d/1-wB8qK-s05YylDBc90y37feXdYuqxvti/view?usp=drive_link',
+       tech:"Schiena neutra e avambraccio sempre in linea con il cavo, se lo disallinei lavora il tricipite. Scapola e braccio si muovono insieme: in alto lascia salire la scapola per allungare il dorsale, poi porta il gomito verso il bacino. Non ruotare il polso. Straps se la presa cede prima della schiena."},
+      {id:'c_panca45_multipower',muscle:'Petto',name:'Panca 45 al multipower',proto:'3 × 6/12 cedimento · per braccio',rest:120,type:'ced',
+       video:'https://drive.google.com/file/d/1d7MmREAMeVaQi5Mc6IQP_8Mp_iZbUBi8/view?usp=drive_link',
+       tech:"Posiziona la panca in modo che, con il bilanciere vicino al petto, i gomiti siano a circa 45° dal busto e gli avambracci verticali. Scapole basse. Scendi in 2/3 secondi fino a sfiorare il petto, breve pausa, spinta esplosiva. Niente rimbalzo."},
+      {id:'c_alzate_cavo',muscle:'Spalle',name:'Alzate laterali cavo',proto:'50 colpi · per braccio',type:'m50',
+       video:'https://drive.google.com/file/d/1LviqPAJPFFmT0J3Zp2-38I13e9B3UFAu/view?usp=drive_link',
+       tech:"Cavo all'altezza del bacino e dietro la schiena, cavigliera vicino al gomito. Braccio quasi teso sul piano della scapola, pensa ad allontanare la mano da te, non ad alzarla. Spalle lontane dalle orecchie. Non serve salire oltre l'orizzontale."},
+      {id:'c_panca_scott',muscle:'Bicipiti',name:'Panca Scott appoggiato',proto:'2 × 6/12 cedimento',sets:2,rest:120,type:'ced',
+       video:'https://drive.google.com/file/d/1MvnjjKymlt9qDmn8ic8KwrB7jFmDXXoG/view?usp=drive_link',
+       tech:"Ascella ben appoggiata e omero premuto contro il pad. Scendi fino in fondo in 2/3 secondi: la parte bassa vicino al gomito è quella che fa crescere di più. Sali deciso senza staccare il gomito e senza slanci."},
+      {id:'c_pushdown_singolo',muscle:'Tricipiti',name:'Push down singolo braccio',proto:'50 colpi · per braccio',type:'m50',
+       video:'https://drive.google.com/file/d/1T5ZKEsQ3pVZaS_fNAXxVnqnYDRROI2ii/view?usp=drive_link',
+       tech:"Busto appena inclinato in avanti, gomito un po' staccato dal busto e fermo. Stendi bene il gomito e risali controllando. Parti sempre dal braccio più debole."}
+    ]},
+    {n:'04',name:'Parte bassa',alt:true,items:[
+      {id:'c_leg_ext',muscle:'Quadricipiti',name:'Leg extension',proto:'2 × 6/12 cedimento · per gamba',sets:2,rest:120,type:'ced',
+       video:'https://drive.google.com/file/d/1y7NZPc7i7-I8re2uLaoMgJg6O2qux7zu/view?usp=drive_link',
+       tech:"Schienale un po' inclinato indietro così lavora anche il retto femorale. Bacino incollato al sedile. Scendi piegando bene il ginocchio e sali esplosivo fino quasi a stendere la gamba."},
+      {id:'c_leg_curl_sdraiato',muscle:'Femorali',name:'Leg curl sdraiato',proto:'2 × 6/12 cedimento · per gamba',sets:2,rest:120,type:'ced',
+       tech:"Bacino incollato al pad, non inarcare la schiena quando chiudi. Piedi a martello. Scendi controllato fino a gamba quasi tesa, senza far toccare il pacco pesi."},
+      {id:'c_hip_thrust',muscle:'Glutei',name:'Hip thrust',proto:'2 × 6/12 cedimento',sets:2,rest:120,type:'ced',
+       video:'https://drive.google.com/file/d/1iu_W015fAq5SDT-NWbthXunyurYhoT2f/view?usp=drive_link',
+       tech:"Schiena alta appoggiata alla panca, piedi larghi come il bacino, in alto le tibie sono verticali. Spingi con i talloni e porta il bacino in estensione senza inarcare la zona lombare, 1 secondo di stop in alto. Niente elastico alle ginocchia."}
+    ]},
+    {n:'05',name:'Defaticamento',kind:'warm',mute:true,items:[
+      {name:'Stretching dei muscoli lavorati'}
+    ]}
+  ]}
 };
 
 /* ---------- Salvataggio ---------- */
