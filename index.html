@@ -76,7 +76,7 @@ details[open] > summary .plus{transform:rotate(45deg)}
 .chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;height:32px;padding:0 11px;border-radius:999px;border:1px solid var(--border);background:var(--card2);color:var(--text)}
 .chip.m50{color:var(--orange);border-color:rgba(255,107,53,.5)}
 .chip.ced{color:var(--teal);border-color:rgba(59,255,212,.45)}
-.chip.fit{color:var(--teal);border-color:rgba(59,255,212,.45)}
+.chip.fit,.chip.rep{color:var(--teal);border-color:rgba(59,255,212,.45)}
 .chip.rest{color:var(--accent);border-color:rgba(232,255,59,.45)}
 .chip.rest svg{width:14px;height:14px}
 .chip.rest:active{background:rgba(232,255,59,.15)}
@@ -270,7 +270,42 @@ const DAYS={
       {name:'Stretching dei muscoli lavorati'}
     ]}
   ]},
-  B:null,
+  B:{sections:[
+    {n:'01',name:'Riscaldamento',kind:'warm',items:[
+      {name:'Cyclette o vogatore',proto:'5 min'},
+      {name:'Mobilità con elastico o bastone',proto:'Spalle, anche, colonna'},
+      {name:'Serie di avvicinamento',proto:'Prima di ogni esercizio pesante',note:'Esempio: lavori con 50 kg, fai una serie con 20, una con 30, una con 40 e poi inizi.'}
+    ]},
+    {n:'02',name:'Addome',alt:true,items:[
+      {id:'b_addome_sbarra',muscle:'Addome',name:'Addome basso alla sbarra',proto:'3 × 8/12',rest:60,type:'rep',
+       tech:"Appeso con le spalle attive, senza dondolare. Non limitarti ad alzare le gambe: porta il bacino verso il petto arrotolando la colonna, così lavora l'addome e non solo i flessori dell'anca. Scendi controllato."}
+    ]},
+    {n:'03',name:'Parte bassa',alt:true,items:[
+      {id:'b_pressa45',muscle:'Quadricipiti',name:'Pressa 45 gradi',proto:'3 × 6/12 cedimento · per gamba',rest:120,type:'ced',
+       tech:"Scendi profondo senza far ruotare il bacino e senza staccare la zona lombare dallo schienale. Piedi a metà pedana, un po' più alti se la caviglia ti blocca. Discesa in 2/3 secondi, salita decisa. Puoi stendere le ginocchia senza scattare e prendere fiato in alto tra una ripetizione e l'altra."},
+      {id:'b_leg_curl',muscle:'Femorali',name:'Leg curl seduto',proto:'50 colpi',rest:60,type:'m50',
+       tech:"Il migliore per i femorali. Inclinati un po' in avanti con il bacino in antiversione, senza ingobbirti. Piedi a martello così lavorano anche i polpacci. Mezzo secondo di pausa in allungamento."}
+    ]},
+    {n:'04',name:'Parte alta',items:[
+      {id:'b_spinte_multipower',muscle:'Spalle',name:'Spinte multipower',proto:'3 × 6/12 cedimento · per braccio',rest:120,restNote:'per braccio',type:'ced',
+       tech:"Panca a 60/75° e bilanciere centrato. Gomiti un po' avanti, avambracci verticali, presa né stretta né larga. Scendi fino sotto il mento, così lavora anche il deltoide laterale. Schiena appoggiata, non inarcarti."},
+      {id:'b_low_row',muscle:'Schiena',name:'Low row',proto:'3 × 6/12 cedimento',rest:120,restNote:'per braccio',type:'ced',
+       tech:"Petto appoggiato al pad se c'è. In allungamento lascia andare avanti le scapole, poi tira avvicinandole. Lavora soprattutto i trapezi alti. Non ingobbirti, niente slancio con il busto e usa gli straps."},
+      {id:'b_fly_reverse',muscle:'Spalle posteriori',name:'Fly reverse',proto:'3 × 6/12 cedimento · per braccio',rest:120,restNote:'per braccio',type:'ced',
+       tech:"Presa prona, gomiti un po' sotto le spalle. Porta indietro il braccio senza stringere le scapole, che restano avanti. Fermati quando il braccio arriva in linea con le spalle."},
+      {id:'b_pec_fly',muscle:'Petto',name:'Pec fly',proto:'3 × 6/12 cedimento',rest:120,restNote:'per braccio',type:'ced',
+       tech:"Regola la macchina in modo che la partenza sia già il massimo allungamento sicuro. Gomiti leggermente piegati e un po' avanti, petto in fuori. Controlla l'apertura e chiudi senza far sbattere le maniglie."},
+      {id:'b_hammer',muscle:'Bicipiti',name:'Hammer',proto:'3 × 6/12 cedimento',rest:120,restNote:'per braccio',type:'ced',
+       tech:"Presa neutra, gomito fermo al fianco. Lavora il brachioradiale che dà spessore all'avambraccio. Niente slancio con il busto, scendi controllato fino a braccio steso."}
+    ]},
+    {n:'05',name:'Parte bassa',alt:true,items:[
+      {id:'b_hip_abductor',muscle:'Glutei',name:'Hip abductor',proto:'2 × 6/12 cedimento',sets:2,rest:120,type:'ced',
+       tech:"Busto inclinato in avanti per lavorare le fibre basse del gluteo. Parti con le ginocchia vicine, apri esplosivo e torna controllato senza far toccare il pacco pesi."}
+    ]},
+    {n:'06',name:'Defaticamento',kind:'warm',mute:true,items:[
+      {name:'Stretching dei muscoli lavorati'}
+    ]}
+  ]},
   C:null
 };
 
@@ -291,13 +326,17 @@ const num=v=>{const x=parseFloat(String(v==null?'':v).replace(',','.'));return i
 const hasVals=o=>!!o&&Object.values(o).some(v=>v!==''&&v!=null);
 const lastFor=(d,id)=>{const h=S[d].hist.find(e=>hasVals(e.v[id]));return h?h.v[id]:null};
 const histFor=(d,id,n)=>S[d].hist.filter(e=>hasVals(e.v[id])).slice(0,n);
+const KR=t=>t==='ced'||t==='rep';
+const NS=ex=>ex.sets||3;
+const rng=n=>Array.from({length:n},(_,i)=>i+1);
 const fmtDate=iso=>{const p=iso.split('-');return p[2]+'/'+p[1]};
 function findEx(id){for(const d in DAYS){if(!DAYS[d])continue;for(const s of DAYS[d].sections)for(const it of s.items)if(it.id===id)return it}return null}
 
-function fmtEntry(type,v){
-  if(type==='ced') return [1,2,3].map(i=>(v['s'+i+'kg']||v['s'+i+'r'])?`${v['s'+i+'kg']||'–'}×${v['s'+i+'r']||'–'}`:null).filter(Boolean).join('  ·  ');
+function fmtEntry(ex,v){
+  const type=ex.type;
+  if(KR(type)) return rng(NS(ex)).map(i=>(v['s'+i+'kg']||v['s'+i+'r'])?`${v['s'+i+'kg']||'–'}×${v['s'+i+'r']||'–'}`:null).filter(Boolean).join('  ·  ');
   if(type==='m50') return `${v.kg0||'–'} kg`+(v.kg1?` → ${v.kg1} kg`:'');
-  return [1,2,3].map(i=>v['s'+i+'kg']).filter(Boolean).join('  ·  ')+' kg';
+  return rng(NS(ex)).map(i=>v['s'+i+'kg']).filter(Boolean).join('  ·  ')+' kg';
 }
 function hintFor(ex,last){
   if(ex.type==='ced'){
@@ -321,9 +360,9 @@ function inp(id,f,ph,key,mode){
 }
 function logHtml(ex,last){
   const L=last||{};
-  if(ex.type==='ced'){
+  if(KR(ex.type)){
     let h=`<div class="log ced"><span></span><span class="lh">Kg</span><span class="lh">Rip${ex.side?' '+ex.side:''}</span>`;
-    for(let i=1;i<=3;i++) h+=`<span class="sl">S${i}</span>${inp(ex.id,'s'+i+'kg',L['s'+i+'kg'],i===1,'decimal')}${inp(ex.id,'s'+i+'r',L['s'+i+'r'],i===1,'numeric')}`;
+    for(const i of rng(NS(ex))) h+=`<span class="sl">S${i}</span>${inp(ex.id,'s'+i+'kg',L['s'+i+'kg'],i===1,'decimal')}${inp(ex.id,'s'+i+'r',L['s'+i+'r'],i===1,'numeric')}`;
     return h+`</div><div class="warn" hidden></div>`;
   }
   if(ex.type==='m50'){
@@ -345,14 +384,14 @@ function exCard(ex){
   const last=lastFor(day,ex.id), hint=hintFor(ex,last), hist=histFor(day,ex.id,3);
   return `<article class="ex" data-id="${ex.id}">
     <div class="ex-top"><div><div class="mus">${ex.muscle}</div><h3>${ex.name}</h3></div>
-      <a class="vid" href="${ex.video}" target="_blank" rel="noopener">${PLAY}Video</a></div>
-    <div class="chips"><span class="chip ${ex.type}">${ex.proto}</span>${ex.rest?`<button class="chip rest" data-rest="${ex.rest}" data-name="${esc(ex.name)}">${CLOCK}Recupero ${ex.rest/60} min</button>`:''}</div>
+      ${ex.video?`<a class="vid" href="${ex.video}" target="_blank" rel="noopener">${PLAY}Video</a>`:''}</div>
+    <div class="chips"><span class="chip ${ex.type}">${ex.proto}</span>${ex.rest?`<button class="chip rest" data-rest="${ex.rest}" data-name="${esc(ex.name)}">${CLOCK}Recupero ${ex.rest/60} min${ex.restNote?' '+ex.restNote:''}</button>`:''}</div>
     ${hint?`<div class="hint">${hint}</div>`:''}
     ${logHtml(ex,last)}
     ${ex.type==='m50'?counterHtml():''}
-    ${hist.length?`<div class="hist"><b>Ultime sedute</b>${hist.map(h=>`<div><span>${fmtDate(h.d)}</span>${fmtEntry(ex.type,h.v[ex.id])}</div>`).join('')}</div>`:''}
+    ${hist.length?`<div class="hist"><b>Ultime sedute</b>${hist.map(h=>`<div><span>${fmtDate(h.d)}</span>${fmtEntry(ex,h.v[ex.id])}</div>`).join('')}</div>`:''}
     <details class="dt"><summary><span class="lbl"><i class="dot"></i>Tecnica</span><span class="plus">+</span></summary><div class="dt-b"><p>${ex.tech}</p></div></details>
-    ${ex.type!=='fit'?methodHtml(ex.type):''}
+    ${METHOD[ex.type]?methodHtml(ex.type):''}
   </article>`;
 }
 function rulesHtml(){
@@ -416,9 +455,9 @@ function chronoHtml(){
 }
 function cell(lbl,val,unit,key){return `<div class="sh-c${key?' k':''}"><small>${lbl}</small><b>${val?esc(val)+(unit?` <i>${unit}</i>`:''):'–'}</b></div>`}
 function sessionValsHtml(ex,v){
-  if(ex.type==='ced') return `<div class="sh-v">${[1,2,3].map(i=>{const kg=v['s'+i+'kg'],r=v['s'+i+'r'];return `<div class="sh-c${i===1?' k':''}"><small>Serie ${i}</small><b>${kg?esc(kg)+' <i>kg</i>':'–'}</b><div style="font-size:13px;color:var(--muted);font-weight:600">${r?'× '+esc(r)+' rip':''}</div></div>`}).join('')}</div>`;
+  if(KR(ex.type)) return `<div class="sh-v${NS(ex)===2?' two':''}">${rng(NS(ex)).map(i=>{const kg=v['s'+i+'kg'],r=v['s'+i+'r'];return `<div class="sh-c${i===1?' k':''}"><small>Serie ${i}</small><b>${kg?esc(kg)+' <i>kg</i>':'–'}</b><div style="font-size:13px;color:var(--muted);font-weight:600">${r?'× '+esc(r)+' rip':''}</div></div>`}).join('')}</div>`;
   if(ex.type==='m50') return `<div class="sh-v two">${cell('Partenza',v.kg0,'kg',true)}${cell('Finale',v.kg1,'kg',false)}</div>`;
-  return `<div class="sh-v">${[1,2,3].map(i=>cell('Serie '+i,v['s'+i+'kg'],'kg',i===1)).join('')}</div>`;
+  return `<div class="sh-v">${rng(NS(ex)).map(i=>cell('Serie '+i,v['s'+i+'kg'],'kg',i===1)).join('')}</div>`;
 }
 let openSess=null;
 function openSession(d,i){
